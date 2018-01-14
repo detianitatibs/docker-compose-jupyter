@@ -1,0 +1,13 @@
+version: "3"
+services:
+  jupyter:
+    image: jupyter/datascience-notebook
+    ports:
+      - "8888:8888"
+    volumes:
+      - jupyter_data:/opt/conda
+      - jovyan_data:/home/jovyan
+    container_name: jupyter
+volumes:
+  jupyter_data:
+  jovyan_data:
