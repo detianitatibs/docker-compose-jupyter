@@ -4,10 +4,9 @@ services:
     image: jupyter/datascience-notebook
     ports:
       - "8888:8888"
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
     volumes:
-      - jupyter_data:/opt/conda
-      - jovyan_data:/home/jovyan
+      - ./work:/home/jovyan/work
+    command: start-notebook.sh --NotebookApp.token=''
     container_name: jupyter
-volumes:
-  jupyter_data:
-  jovyan_data:
